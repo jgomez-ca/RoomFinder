@@ -1,0 +1,106 @@
+{
+	"A": [
+		{
+			"100": {
+				"sm": "https://via.placeholder.com/300x300?text=A 100 small",
+				"lg": "https://via.placeholder.com/600x600/6495ed/fff?text=A 100 large"
+			}
+		},
+		{
+			"200": {
+				"sm": "https://via.placeholder.com/300x300?text=A 200 small",
+				"lg": "https://via.placeholder.com/600x600/6495ed/fff?text=A 200 large"
+			}
+		},
+		{
+			"300": {
+				"sm": "https://via.placeholder.com/300x300?text=A 300 small",
+				"lg": "https://via.placeholder.com/600x600/6495ed/fff?text=A 300 large"
+			}
+		},
+		{
+			"400": {
+				"sm": "https://via.placeholder.com/300x300?text=A 400 small",
+				"lg": "https://via.placeholder.com/600x600/6495ed/fff?text=A 400 large"
+			}
+		}
+	],
+	"B": [
+		{
+			"100": {
+				"sm": "https://via.placeholder.com/300x300?text=B 100 small",
+				"lg": "https://via.placeholder.com/600x600/6495ed/fff?text=B 100 large"
+			}
+		},
+		{
+			"200": {
+				"sm": "https://via.placeholder.com/300x300?text=B 200 small",
+				"lg": "https://via.placeholder.com/600x600/6495ed/fff?text=B 200 large"
+			}
+		},
+		{
+			"300": {
+				"sm": "https://via.placeholder.com/300x300?text=B 300 small",
+				"lg": "https://via.placeholder.com/600x600/6495ed/fff?text=B 300 large"
+			}
+		},
+		{
+			"400": {
+				"sm": "https://via.placeholder.com/300x300?text=B 400 small",
+				"lg": "https://via.placeholder.com/600x600/6495ed/fff?text=B 400 large"
+			}
+		}
+	],
+	"C": [
+		{
+			"100": {
+				"sm": "https://via.placeholder.com/300x300?text=C 100 small",
+				"lg": "https://via.placeholder.com/600x600/6495ed/fff?text=C 100 large"
+			}
+		},
+		{
+			"200": {
+				"sm": "https://via.placeholder.com/300x300?text=C 200 small",
+				"lg": "https://via.placeholder.com/600x600/6495ed/fff?text=C 200 large"
+			}
+		},
+		{
+			"300": {
+				"sm": "https://via.placeholder.com/300x300?text=C 300 small",
+				"lg": "https://via.placeholder.com/600x600/6495ed/fff?text=C 300 large"
+			}
+		},
+		{
+			"400": {
+				"sm": "https://via.placeholder.com/300x300?text=C 400 small",
+				"lg": "https://via.placeholder.com/600x600/6495ed/fff?text=C 400 large"
+			}
+		}
+	],
+	"D": [
+		{
+			"100": {
+				"sm": "https://via.placeholder.com/300x300?text=D 100 small",
+				"lg": "https://via.placeholder.com/600x600/6495ed/fff?text=D 100 large"
+			}
+		},
+		{
+			"200": {
+				"sm": "https://via.placeholder.com/300x300?text=D 200 small",
+				"lg": "https://via.placeholder.com/600x600/6495ed/fff?text=D 200 large"
+			}
+		},
+		{
+			"300": {
+				"sm": "https://via.placeholder.com/300x300?text=D 300 small",
+				"lg": "https://via.placeholder.com/600x600/6495ed/fff?text=D 300 large"
+			}
+		},
+		{
+			"400": {
+				"sm": "https://via.placeholder.com/300x300?text=D 400 small",
+				"lg": "https://via.placeholder.com/600x600/6495ed/fff?text=D 400 large"
+			}
+		}
+	]
+}

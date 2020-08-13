@@ -1,0 +1,297 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    
+    <!-- TITLE -->
+    <title>AC Room Finder</title>
+
+    <!-- MAIN STYLESHEET -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/search-bar.css">
+    
+    <!-- FONT AWESOME STYLESHEET -->
+    <script src="https://kit.fontawesome.com/461aba629f.js" crossorigin="anonymous"></script>
+    
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    
+
+
+</head>
+
+<body>
+    
+	<header class = "wrapper">
+        <section class = "navigation">
+           
+            <!------- CODE FOR AC LOGO ON MOBILE VIEW ------->
+            <div class = "wordmark-green desktop-hide mobile-show">
+                <a href = "index.html">
+                    <img src = "images/ac-wordmark-green.svg" alt = "Algonquin College Logo">
+                </a>
+            </div>
+           
+            <!------- CODE FOR AC LOGO ON DESKTOP VIEW ------->
+            <div class = "logo-green desktop-show mobile-hide">
+                <a href = "index.html">    
+                    <img src = "images/ac-logo-green.svg" alt = "Algonquin College Logo">
+                </a>
+            </div>
+            
+            <div class = "navbar">
+                <!------- CODE FOR CAMPUS DROPDOWN MENU ON MOBILE VIEW ------->
+                <div class="dropdown desktop-hide tablet-hide mobile-show">
+                    <button onclick="campusMenu()" class="dropbtn">OTTAWA 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                        
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#">Ottawa</a>
+                        <a href="#">Pembroke</a>
+                        <a href="#">Perth</a>
+                    </div>
+                </div>
+            </div>
+               
+            <!------- JAVASCRIPT CODE FOR CAMPUS DROPDOWN MENU ON MOBILE VIEW ------->   
+            <script>
+                function campusMenu() {
+                    document.getElementById("myDropdown").classList.toggle("show");
+                }
+
+                window.onclick = function(event) {
+                    if (!event.target.matches('.dropbtn')) {
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                       }
+                      }
+                     }
+                    } 
+            </script>
+            
+            <!------- CODE FOR CAMPUS MENU ON DESKTOP VIEW ------->   
+            <div class = "navbar desktop-show tablet-show mobile-hide">
+                <ul>
+                    <li><a href = "#" class = "active">Ottawa</a></li>
+                    <li><a href = "#">Pembroke</a></li>
+                    <li><a href = "#">Perth</a></li>
+                </ul>
+            </div>
+        </section>
+	</header>
+
+    <!------- CODE FOR HOME PAGE BANNER ------->
+    <section>
+        <img src = "images/banner-home-page.jpg" alt = "Banner" width = "100%" >
+    </section>
+
+	<main class = "wrapper">
+
+        <!------- CODE FOR BREADCRUMBS / PAGE TRAIL ------->
+		<section class = "breadcrumbs">
+			<a href = "index.html">Home</a>
+		</section>
+
+		<section>
+			<h1>College Room Finder : Search for a Room</h1>
+			<p>Find your way around the college using the Algonquin College Room Finder Website.</p>
+		</section>
+        
+        <section>
+            <!------- CODE FOR DEFAULT SEARCH FIELDS ------->
+		<div id="search">
+			   <div id="container1">
+					<input type="text" id="searchin" placeholder="Search..." list="list" />
+					<button id="btngo" class="btn btn-primary" type="button" disabled>Go</button>
+			   </div>
+			   <div id="container2">
+					<ul id="list" >
+						 <li href="result-page.html">A201</li>
+						 <li href="result-page.html">A202</li>
+						 <li href="result-page.html">A203</li>
+						 <li href="result-page.html">B201</li>
+						 <li href="result-page.html">B202</li>
+						 <li href="result-page.html">B203</li>
+						 <li href="result-page.html">J201</li>
+						 <li href="result-page.html">J202</li>
+						 <li href="result-page.html">J203</li>
+						 <li href="result-page.html">J204</li>
+						 <li href="result-page.html">J205</li>
+						 <li href="result-page.html">J206</li>
+						 <li href="result-page.html">J207</li>
+						 <li href="result-page.html">J208</li>
+						 <li href="result-page.html">J209</li>
+						 <li href="result-page.html">J210</li>
+
+					</ul>
+			   </div>
+		  </div>
+            
+            <!------- CODE FOR ADDITIONAL SEARCH FIELDS ------->
+<!-------            <section class = "additional-search">
+                <button class="accordion">More Filters</button>
+                    <div class="additionalsearch">
+                        <section class = "search">
+                            <div class = "course-code">
+                                <input class = "search-term" type = "text" placeholder = "Capacity">
+                                <span class = "icon-search search-icon"></span>
+                            </div>
+
+                            <div class = "room-number">
+                                <input class = "search-term" type = "text" placeholder = "Outlets">
+                                <span class = "icon-search search-icon"></span>
+                            </div>
+
+                            <div class = "building-name">
+                                <input class = "search-term" type = "text" placeholder = "Whiteboards">
+                                <span class = "icon-search search-icon"></span>
+                            </div>
+		                </section>
+                    </div>
+                    
+                    <!------- JAVASCRIPT CODE FOR MORE FILTERS OPTION ------->
+  <!-------                  <script>
+                        var acc = document.getElementsByClassName("accordion");
+                        var i;
+
+                        for (i = 0; i < acc.length; i++) {
+                          acc[i].addEventListener("click", function() {
+                            this.classList.toggle("active-filter");
+                            var additionalsearch = this.nextElementSibling;
+                            if (additionalsearch.style.maxHeight) {
+                              additionalsearch.style.maxHeight = null;
+                            } else {
+                              additionalsearch.style.maxHeight = additionalsearch.scrollHeight + "px";
+                            } 
+                          });
+                        }
+                    </script>
+            </section>
+               
+            <!------- CODE FOR SHOW RESULTS BUTTON ------->
+<!--
+            <div class = "result">
+                <a href = "search-result-page.html" class = "button">Show Results</a>
+            </div>
+-->
+        
+        </section>    
+    
+        <!------- CODE FOR POPULAR SEARCHES ------->
+		<section class = "popular">
+            <h1>Popular Searches</h1>
+			    <section class = "popular-icons">
+                    <div class = "library hover-item">
+                        <a href = "#">
+                            <span class = "icon-library icons"></span>
+                        </a>
+                        <h4>
+                            <a href = "#">Library</a>
+                        </h4>
+                    </div>
+
+                    <div class = "cafes hover-item">
+                        <a href = "#">
+                            <span class = "icon-coffee icons"></span>
+                        </a>
+                        <h4>
+                            <a href = "#">Cafes</a>
+                        </h4>
+                    </div>
+
+                    <div class = "gym hover-item">
+                        <a href = "#">
+                            <span class = "icon-gym icons"></span>
+                        </a>
+                        <h4>
+                            <a href = "#">Gym</a>
+                        </h4>
+                    </div>
+
+                    <div class = "food-hall hover-item">
+                        <a href = "#">
+                            <span class = "icon-food icons"></span>
+                        </a>
+                        <h4>
+                            <a href = "#">Food <br> Hall</a>
+                        </h4>
+                    </div>
+
+                    <div class = "student-commons hover-item">
+                        <a href = "#">
+                            <span class = "icon-student-commons icons"></span>
+                        </a>
+                        <h4>
+                            <a href = "#">Student <br> Commons</a>
+                        </h4>
+                    </div>
+
+                    <div class = "campus-store hover-item">
+                        <a href = "#">
+                            <span class = "icon-store icons"></span>
+                        </a>
+                        <h4>
+                            <a href = "#">Campus <br> Store</a>
+                        </h4>
+                    </div>
+                </section>
+		</section>
+			
+	</main>
+    
+    <!------- CODE FOR FOOTER ------->
+	<footer>
+        <div class = "footer-container">
+            <div class = "logo-white">
+                <a href = "index.html">
+                    <img src = "images/ac-logo-white.png" alt = "Algonquin College Logo" class = "ac-logo-white">
+                </a>
+            </div>
+            
+            <div class = "campus-1">
+                <h4>Ottawa</h4>
+                <p>1385 Woodroffe Avenue <br> 
+                   Ottawa, Ontario K2G 1V8 <br>
+                   613-727-4723</p>
+            </div>
+                
+            <div class = "campus-2">
+                <h4>Pembroke</h4>
+                <p>1 College Way <br>
+                   Pembroke, Ontario K8A 0C8 <br>
+                   613-735-4700</p>
+            </div>
+                
+            <div class = "campus-3">
+                <h4>Perth</h4>
+                <p>7 Craig Street <br>
+                   Perth, Ontario K7H 1X7 <br>
+                   613-267-2859</p>
+            </div>
+        </div>
+        
+        <div class = "copyright">
+            <p>
+                <span class = "icon-copyright"></span>
+                2020 Algonquin College of Applied Arts and Technology | 
+                <a href = "#">Website Feedback</a> |
+                <a href = "#">Privacy Statement</a>
+            </p>
+        </div>
+    </footer>
+    
+        <!------- SCRIPTS FOR SEARCH BAR ------->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+
+</body>
+</html>

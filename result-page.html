@@ -1,0 +1,662 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    
+    <!-- TITLE -->
+    <title>Room J209</title>
+    
+    <!-- MAIN STYLESHEET -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- FONT AWESOME STYLESHEET -->
+    <script src="https://kit.fontawesome.com/461aba629f.js" crossorigin="anonymous"></script>
+    
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+
+</head>
+
+<body>
+    
+	<header class = "wrapper">
+        <section class = "navigation">
+           
+            <!------- CODE FOR AC LOGO ON MOBILE VIEW ------->
+            <div class = "wordmark-green desktop-hide mobile-show">
+                <a href = "index.html"> 
+                    <img src = "images/ac-wordmark-green.svg" alt = "Algonquin College Logo">
+                </a>
+            </div>
+           
+            <!------- CODE FOR AC LOGO ON DESKTOP VIEW ------->
+            <div class = "logo-green desktop-show mobile-hide">
+                <a href = "index.html">
+                    <img src = "images/ac-logo-green.svg" alt = "Algonquin College Logo">
+                </a>
+            </div>
+
+            <div class = "navbar">
+                <!------- CODE FOR CAMPUS DROPDOWN MENU ON MOBILE VIEW ------->
+                <div class="dropdown desktop-hide tablet-hide mobile-show">
+                    <button onclick="campusMenu()" class="dropbtn">OTTAWA 
+                       <i class="fa fa-caret-down"></i>
+                    </button>
+                        
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#">Ottawa</a>
+                        <a href="#">Pembroke</a>
+                        <a href="#">Perth</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!------- JAVASCRIPT CODE FOR CAMPUS DROPDOWN MENU ON MOBILE VIEW ------->       
+            <script>    
+                function campusMenu() {
+                    document.getElementById("myDropdown").classList.toggle("show");
+                }
+
+                window.onclick = function(event) {
+                    if (!event.target.matches('.dropbtn')) {
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                       }
+                      }
+                     }
+                    }
+            </script>
+            
+            <!------- CODE FOR CAMPUS MENU ON DESKTOP VIEW ------->   
+            <div class = "navbar desktop-show tablet-show mobile-hide">
+                <ul>
+                    <li><a href = "#" class = "active">Ottawa</a></li>
+                    <li><a href = "#">Pembroke</a></li>
+                    <li><a href = "#">Perth</a></li>
+                </ul>
+            </div>
+        </section>
+	</header>
+
+    <!------- CODE FOR BREADCRUMBS / PAGE TRAIL ------->
+	<main class = "wrapper">
+
+		<section class = "breadcrumbs">
+            <a href = "index.html">Home</a> > 
+            <a href = "search-result-page.html">Search Results </a> > 
+            <a href = "result-page.html">Room J209</a>
+		</section>
+		
+		<h1>Room J209 - J Building</h1>
+		
+        <!------- CODE FOR CLASSROOM IMAGES ON MOBILE VIEW ------->
+        <div class =  "desktop-hide mobile-show">
+            <div class = "room-image-slideshow">
+
+                <!-- FULL WIDTH IMAGES WITH CAPTIONS -->
+                <div class = "roomSlides fade">
+                    <img src = "images/j209-side-view.jpg" style= "width:100%" alt = "Room J209 - Side View">
+                    <div class = "caption-mobile" id = "caption-mob">Room J209 - Side View</div>
+                </div>
+
+                <div class = "roomSlides fade">
+                    <img src = "images/j209-student-view.jpg" style = "width:100%" alt = "Room J209 - Student View">
+                    <div class = "caption-mobile" id = "caption-mob">Room J209 - Student View</div>
+                </div>
+
+                <div class = "roomSlides fade">
+                    <img src = "images/j209-prof-view.jpg" style = "width:100%" alt = "Room J209 - Professor View">
+                    <div class = "caption-mobile" id = "caption-mob">Room J209 - Professor View</div>
+                </div>
+
+                <!-- CODE FOR BULLETS / DOTS -->
+                <div class = "bullets" style = "text-align:center">
+                  <span class = "dot" onclick = "presentSlide(1)"></span>
+                  <span class = "dot" onclick = "presentSlide(2)"></span>
+                  <span class = "dot" onclick = "presentSlide(3)"></span>
+                </div>
+
+                <!-- PREVIOUS BUTTON -->
+                <a class = "prev-mobile" onclick = "addSlides(-1)">&#10094;</a>
+
+                <!-- NEXT BUTTON -->
+                <a class = "next-mobile" onclick = "addSlides(1)">&#10095;</a>
+                
+                <!------- JAVASCRIPT CODE FOR ON CLICK PREVIOUS AND NEXT FUNCTION ------->
+                <script>
+                    var slideIndex = 1;
+                    showRoomSlides(slideIndex);
+
+                    // NEXT / PREVIOUS CONTROLS
+                    function addSlides(n) {
+                      showRoomSlides(slideIndex += n);
+                    }
+
+                    // THUMBNAIL IMAGE CONTROLS
+                    function presentSlide(n) {
+                      showRoomSlides(slideIndex = n);
+                    }
+
+                    function showRoomSlides(n) {
+                      var i;
+                      var slides = document.getElementsByClassName("roomSlides");
+                      var dots = document.getElementsByClassName("dot");
+                      var captionMobText = document.getElementById("captionMob");
+                      if (n > slides.length) {slideIndex = 1}
+                      if (n < 1) {slideIndex = slides.length}
+                      for (i = 0; i < slides.length; i++) {
+                          slides[i].style.display = "none";
+                      }
+                      for (i = 0; i < dots.length; i++) {
+                          dots[i].className = dots[i].className.replace(" active-dot", "");
+                      }
+                      slides[slideIndex-1].style.display = "block";
+                      dots[slideIndex-1].className += " active-dot";
+                      captionMobText.innerHTML = dots[slideIndex-1].alt;
+                    }
+                </script>
+            </div>
+        </div>
+
+		<!------- CODE FOR CLASSROOM IMAGES ON DESKTOP VIEW ------->
+		<section class = "room-image desktop-show mobile-hide">
+            <div class = "slider">
+                
+                <!-- PREVIOUS BUTTON -->
+                <a class = "prev" onclick = "plusSlides(1)"><i class = "fas fa-chevron-down"></i></a>
+                
+                <!-- IMAGE THUMBNAILS -->
+                <div class = "image-column side-view">
+                    <img src = "images/j209-side-view.jpg" alt = "Room J209 - Side View" class = "side cursor" onclick = "currentSlide(1)">
+                </div>
+                
+                <div class = "image-column student-view">
+                    <img src = "images/j209-student-view.jpg" alt = "Room J209 - Student View" class = "side cursor" onclick = "currentSlide(2)">
+                </div>
+                
+                <div class = "image-column prof-view">
+                    <img src = "images/j209-prof-view.jpg" alt = "Room J209 - Professor View" class = "side cursor" onclick = "currentSlide(3)">
+                </div>
+                
+                <!-- NEXT BUTTON -->
+                <a class = "next" onclick = "plusSlides(-1)"><i class="fas fa-chevron-up"></i></a>
+                
+            </div>
+		    
+            <!-- FULL WIDTH IMAGES WITH CAPTIONS -->
+            <div class = "main-image">
+                <div class = "full-image">
+		            <img src = "images/j209-side-view.jpg" alt = "Room #J209 - Student View">
+		        </div>
+		        
+		        <div class = "full-image">
+		            <img src = "images/j209-student-view.jpg" alt = "Room #J209 - Student View">
+		        </div>
+		        
+		        <div class = "full-image">
+		            <img src = "images/j209-prof-view.jpg" alt = "Room #J209 - Professor View">
+		        </div>
+		        
+		        <div class = "caption-container">
+                    <p id = "caption"></p>
+                </div>
+		    </div>
+		    
+		    <!------- JAVASCRIPT CODE FOR ON CLICK PREVIOUS AND NEXT FUNCTION ------->
+		    <script>
+                var slideIndex = 1;
+                showSlides(slideIndex);
+
+                // NEXT / PREVIOUS CONTROLS
+                function plusSlides(n) {
+                  showSlides(slideIndex += n);
+                }
+
+                // THUMBNAIL IMAGE CONTROLS
+                function currentSlide(n) {
+                  showSlides(slideIndex = n);
+                }
+
+                function showSlides(n) {
+                  var i;
+                  var slides = document.getElementsByClassName("full-image");
+                  var dots = document.getElementsByClassName("side");
+                  var captionText = document.getElementById("caption");
+                  if (n > slides.length) {slideIndex = 1}
+                  if (n < 1) {slideIndex = slides.length}
+                  for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                  }
+                  for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active-image", "");
+                  }
+                  slides[slideIndex-1].style.display = "block";
+                  dots[slideIndex-1].className += " active-image";
+                  captionText.innerHTML = dots[slideIndex-1].alt;
+                }
+            </script>    
+		    
+		</section>
+		
+		<!------- CODE FOR NEARBY AMENITIES ------->
+		<section class = "nearby-amenities">
+		    <h2>Nearby Amenities</h2>
+                <div class = "nearby-icons">
+                    <div class = "icon-1">
+                        <span class = "icon-accessible-washroom icon"></span>
+                        <h4>Accessible <br> Washroom</h4>
+                    </div>
+                    
+                    <div class = "icon-2">
+                        <span class = "icon-elevator icon"></span>
+                        <h4>Elevator</h4>
+                    </div>
+                    
+                    <div class = "icon-3">
+                        <span class = "icon-hand-sanitizer icon"></span>
+                        <h4>Hand <br> Sanitizer</h4>
+                    </div>
+                    
+                    <div class = "icon-4">
+                        <span class = "icon-washroom icon"></span>
+                        <h4>Washroom</h4>
+                    </div>
+                    
+                    <div class = "icon-5">
+                        <span class = "icon-water-fountain icon"></span>
+                        <h4>Water <br> Fountain</h4>
+                    </div>
+                </div>
+		</section>
+		
+		<!------- CODE FOR SPECIAL NOTES ------->
+		<section class = "special-notes">
+		    <h2>Special Notes</h2>
+		    <p>Accessible Classroom</p>
+		</section>
+		
+		<!------- CODE FOR MAP ------->
+		<section class = "map">
+            <h2>Location on Map</h2>
+		    <img src = "images/ac-map.svg" alt = "Algonquin College Map 2020">
+		</section>
+		
+        <!------- CODE FOR TAB MENU ------->
+        <section class = "menu">
+            <div class = "tab">
+              <button class = "tablinks" onclick = "openTab(event, 'REGISTRARS OFFICE')" id = "defaultOpen">REGISTRAR'S OFFICE</button>
+              <button class = "tablinks" onclick = "openTab(event, 'PHYSICAL RESOURCES')">PHYSICAL RESOURCES</button>
+            </div>
+            
+            <!------- CODE FOR REGISTRARS OFFICE ------->
+            <div id = "REGISTRARS OFFICE" class = "tabcontent">
+                <div class = "registrars-office">
+                    <div class = "capacity">
+                        <span class = "icon-students icons"></span>
+                        <br>
+                        <h4>Capacity</h4>
+                        <h3>30</h3>
+                    </div>
+                    
+                    <div class = "classroom">
+                        <span class = "icon-classroom-type icons"></span>
+                        <br>
+                        <h4>Classroom</h4>
+                        <h3>Collaborative</h3>
+                    </div>
+                    
+                    <div class = "outlets">
+                        <span class = "icon-outlet icons"></span>
+                        <br>
+                        <h4>Outlets</h4>
+                        <h3>25</h3>
+                    </div>
+                    
+                    <div class = "boards">
+                        <span class = "icon-whiteboard icons"></span>
+                        <br>
+                        <h4>Whiteboard</h4>
+                        <h3>5</h3>
+                    </div>
+                    
+                    <div class = "windows">
+                        <span class = "icon-window icons"></span>
+                        <br>
+                        <h4>Windows</h4>
+                        <h3>Yes</h3>
+                    </div>
+                </div>
+                
+                <!------- CODE FOR BOOK A ROOM ------->
+                <section class = "book">
+                    <h2>Book a Room</h2>
+                        <div id = "book">
+                            <form action="/action_page.php">
+                                <div class = "book-room">
+                                    <div class = "email">
+                                        <input class = "book-field" type="email" id="email" name="email" placeholder="EMAIL">
+                                    </div>
+
+                                    <div class = "password">
+                                        <input class = "book-field" type="password" id="pwd" name="pwd" minlength="8" placeholder="PASSWORD">
+                                    </div>
+                                </div>
+
+                                <div class = "result">
+                                    <p class = "button" onclick="myFunction()">Login</p>
+                                </div>
+                        
+                                <!------- JAVASCRIPT CODE DISPLAYING SCHEDULE FUNCTION ON CLICK ------->
+                                <script>
+
+                                    function myFunction() {
+                                      
+                                        document.getElementById("booking").style.display = "block";
+                                        document.getElementById("book").style.display = "none";
+                                    }
+
+                                </script>
+        
+                            </form>
+                        </div>
+                </section>
+                
+                <!------- CODE FOR WEEKLY AVAILABILITY / SCHEDULE ------->
+                <div id ="booking">                      
+                    <div id = "SCHEDULE" class = "schedule" id = "scheduling">
+                       
+                        <div class = "calender">
+                            <p>Please enter your requested dates.</p>
+                       
+                            <form>
+                                <input type="date" placeholder="DD/MM/YYYY" pattern="(^(((0[1-9]|1[0-9]|2[0-8])[\/](0[1-9]|1[012]))|((29|30|31)[\/](0[13578]|1[02]))|((29|30)[\/](0[4,6,9]|11)))[\/](19|[2-9][0-9])\d\d$)|(^29[\/]02[\/](19|[2-9][0-9])(00|04|08|12|16|20|24|28|32|36|40|44|48|52|56|60|64|68|72|76|80|84|88|92|96)$)" required>
+                           </form>
+                       </div>
+                       
+                        <div class = "day">
+                            <button class="daylinks" onclick="openDay(event, 'MONDAY')" id="default">MONDAY</button>
+                            <button class="daylinks" onclick="openDay(event, 'TUESDAY')">TUESDAY</button>
+                            <button class="daylinks" onclick="openDay(event, 'WEDNESDAY')">WEDNESDAY</button>
+                            <button class="daylinks" onclick="openDay(event, 'THURSDAY')">THURSDAY</button>
+                            <button class="daylinks" onclick="openDay(event, 'FRIDAY')">FRIDAY</button>
+                        </div>
+                        
+                        <!-- MONDAY -->
+                        <div id="MONDAY" class="daycontent">
+                            <div class = "monday">
+                                <div class = "day-schedule">
+                                    <div class = "morning">
+                                        <h3>Morning</h3>
+                                        <p>08:00 - 11:00</p>  
+                                    </div>
+
+                                    <div class = "afternoon">
+                                        <h3>Afternoon</h3>
+                                        <p>12:00 - 14:00</p>
+                                        <p>14:00 - 16:00</p> 
+                                    </div>
+
+                                    <div class = "evening">
+                                        <h3>Evening</h3>
+                                        <p>17:00 - 19:00</p>
+                                    </div>
+
+                                    <div class = "night">
+                                        <h3>Night</h3>
+                                        <p>19:00 - 21:00</p> 
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                
+                        <!-- TUESDAY -->
+                        <div id="TUESDAY" class="daycontent">
+                            <div class = "tuesday">
+                                <div class = "day-schedule">
+                                    <div class = "morning">
+                                        <h3>Morning</h3>
+                                        <p>08:00 - 11:00</p>  
+                                    </div>
+
+                                    <div class = "afternoon">
+                                        <h3>Afternoon</h3>
+                                        <p>12:00 - 14:00</p>
+                                        <p>14:00 - 16:00</p> 
+                                    </div>
+
+                                    <div class = "evening">
+                                        <h3>Evening</h3>
+                                        <p>17:00 - 19:00</p>
+                                    </div>
+
+                                    <div class = "night">
+                                        <h3>Night</h3>
+                                        <p>19:00 - 21:00</p> 
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+
+                        <!-- WEDNESDAY -->
+                        <div id="WEDNESDAY" class="daycontent">
+                            <div class = "wednesday">
+                                <div class = "day-schedule">
+                                    <div class = "morning">
+                                        <h3>Morning</h3>
+                                        <p>08:00 - 11:00</p>  
+                                    </div>
+
+                                    <div class = "afternoon">
+                                        <h3>Afternoon</h3>
+                                        <p>12:00 - 14:00</p>
+                                        <p>14:00 - 16:00</p> 
+                                    </div>
+
+                                    <div class = "evening">
+                                        <h3>Evening</h3>
+                                        <p>17:00 - 19:00</p>
+                                    </div>
+
+                                    <div class = "night">
+                                        <h3>Night</h3>
+                                        <p>19:00 - 21:00</p> 
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    
+                        <!-- THURSDAY -->
+                        <div id="THURSDAY" class="daycontent">
+                            <div class = "monday">
+                                <div class = "day-schedule">
+                                    <div class = "morning">
+                                        <h3>Morning</h3>
+                                        <p>08:00 - 11:00</p>  
+                                    </div>
+
+                                    <div class = "afternoon">
+                                        <h3>Afternoon</h3>
+                                        <p class = "time">12:00 - 14:00</p>
+                                        <p>14:00 - 16:00</p> 
+                                    </div>
+
+                                    <div class = "evening">
+                                        <h3>Evening</h3>
+                                        <p>17:00 - 19:00</p>
+                                    </div>
+
+                                    <div class = "night">
+                                        <h3>Night</h3>
+                                        <p>19:00 - 21:00</p> 
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+
+                        <!-- FRIDAY -->
+                        <div id="FRIDAY" class="daycontent">
+                            <div class = "friday">
+                                <div class = "day-schedule">
+                                    <div class = "morning">
+                                        <h3>Morning</h3>
+                                        <p>08:00 - 11:00</p>  
+                                    </div>
+
+                                    <div class = "afternoon">
+                                        <h3>Afternoon</h3>
+                                        <p>12:00 - 14:00</p>
+                                        <p>14:00 - 16:00</p> 
+                                    </div>
+
+                                    <div class = "evening">
+                                        <h3>Evening</h3>
+                                        <p>17:00 - 19:00</p>
+                                    </div>
+
+                                    <div class = "night">
+                                        <h3>Night</h3>
+                                        <p>19:00 - 21:00</p> 
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                        
+                        <!-- CODE FOR BOOK ROOM BUTTON -->
+                        <div class = "result">
+                                <a href = "#" class = "button" >BOOK ROOM</a>
+                        </div> 
+                    </div>
+                </div>
+
+               <!------- JAVASCRIPT CODE FOR DISPLAYING WEEK DAY SCHEDULES ON CLICK ------->
+                <script>
+                    function openDay(evt, name) {
+                      var i, daycontent, daylinks;
+                      daycontent = document.getElementsByClassName("daycontent");
+                      for (i = 0; i < daycontent.length; i++) {
+                        daycontent[i].style.display = "none";
+                      }
+                      daylinks = document.getElementsByClassName("daylinks");
+                      for (i = 0; i < daylinks.length; i++) {
+                        daylinks[i].className = daylinks[i].className.replace(" active", "");
+                      }
+                      document.getElementById(name).style.display = "block";
+                      evt.currentTarget.className += " active";
+                    }
+
+                    document.getElementById("default").click();
+                </script>
+            </div>
+
+            <!------- CODE FOR PHYSICAL RESOURCES ------->
+            <div id="PHYSICAL RESOURCES" class="tabcontent">
+                <div class = "physical-resources">
+                    <div class = "chairs">
+                        <span class = "icon-chair icons"></span>
+                        <h4>Chairs</h4>
+                        <h3>32</h3>
+                    </div>
+
+                    <div class = "computers">
+                        <span class = "icon-desktop icons"></span>
+                        <br>
+                        <h4>Computers</h4>
+                        <h3>1</h3>
+                    </div>
+
+                    <div class = "projectors">
+                        <span class = "icon-projector icons"></span>
+                        <br>
+                        <h4>Projectors</h4>
+                        <h3>1</h3>
+                    </div>
+
+                    <div class = "table">
+                        <span class = "icon-table icons"></span>
+                        <br>
+                        <h4>Tables</h4>
+                        <h3>5</h3>
+                    </div>
+
+                    <div class = "boards">
+                        <span class = "icon-whiteboard icons"></span>
+                        <br>
+                        <h4>Whiteboards</h4>
+                        <h3>5</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!------- JAVASCRIPT CODE FOR DISPLAYING ONE OF THE MENUS ON CLICK ------->
+            <script>
+                function openTab(evt, name) {
+                  var i, tabcontent, tablinks;
+                  tabcontent = document.getElementsByClassName("tabcontent");
+                  for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                  }
+                  tablinks = document.getElementsByClassName("tablinks");
+                  for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                  }
+                  document.getElementById(name).style.display = "block";
+                  evt.currentTarget.className += " active";
+                }
+
+                document.getElementById("defaultOpen").click();
+            </script>            
+        </section>
+            	
+	</main>
+    
+    <!------- CODE FOR FOOTER ------->
+	<footer>
+        <div class = "footer-container">
+            <div class = "logo-white">
+                <a href = "index.html"> 
+                    <img src = "images/ac-logo-white.png" alt = "Algonquin College Logo" class = "ac-logo-white">
+                </a>
+            </div>
+            
+            <div class = "campus-1">
+                <h4>Ottawa</h4>
+                <p>1385 Woodroffe Avenue <br> 
+                   Ottawa, Ontario K2G 1V8 <br>
+                   613-727-4723</p>
+            </div>
+                
+            <div class = "campus-2">
+                <h4>Pembroke</h4>
+                <p>1 College Way <br>
+                   Pembroke, Ontario K8A 0C8 <br>
+                   613-735-4700</p>
+            </div>
+                
+            <div class = "campus-3">
+                <h4>Perth</h4>
+                <p>7 Craig Street <br>
+                   Perth, Ontario K7H 1X7 <br>
+                   613-267-2859</p>
+            </div>
+        </div>
+        
+        <div class = "copyright">
+            <p>
+                <span class = "icon-copyright"></span>
+                2020 Algonquin College of Applied Arts and Technology | 
+                <a href = "#">Website Feedback</a> |
+                <a href = "#">Privacy Statement</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
